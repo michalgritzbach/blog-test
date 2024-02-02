@@ -30,10 +30,16 @@ twitter_username: michalgritzbach
 github_username: michalgritzbach
 permalink: /:title
 
+languages: ["en", "es", "fr", "de", "it", "pt"]
+default_lang: "en"
+exclude_from_localization: ["javascript", "images", "css", "public"]
+parallel_localization: true
+
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-polyglot
 
 # Exclude from processing.
 # The following items will not be processed, by default.

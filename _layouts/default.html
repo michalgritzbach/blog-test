@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ site.active_lang }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+    {% for lang in site.languages %}
+      <a href="/{{ lang }}" class="nolink text-decoration-none">
+        <img src="{{ lang }}.png" class="">
+      </a>
+    {% endfor %}
+
+    <div class="container-sm">
+      <div class="row text-start">
+        <div class="col-md-12">
+          <a href="">
+            <img src="/blog.{{ site.active_lang }}.png" class="img-fluid" alt="Invoice Home Blog" title="Invoice Home Blog" width="1170" height="337">
+          </a>
+        </div>
+      </div>
+
+      <div class="row py-5">
+        <div class="col-md-12 col-lg-7">
+          {{ content }}
+        </div>
+
+        <div class="col-md-12 col-lg-4 col-xxl-3 offset-lg-1 offset-md-0 py-2">
+          <h2 class="text-start fw-bold">{{ site.data.t.posts }}</h2>
+
+          <ul class="d-flex flex-column list-unstyled">
+            {% for post in site.posts %}
+              <li class="py-2">
+                <a href="{{ post.url }}" class="text-secondary">{{ post.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          {% include footer.html %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
